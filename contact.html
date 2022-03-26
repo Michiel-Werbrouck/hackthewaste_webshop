@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
+  
     <title>Appeal - Contact Page</title>
 
       <link rel="icon" href="assets/images/favicon.ico"/>
@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
+
+ 
 <!--
 
 TemplateMo 571 Hexashop
@@ -129,7 +132,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                              <button type="submit" id="form-submit"onclick="sendEmail()" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
                             </fieldset>
                           </div>
                         </div>
@@ -150,6 +153,9 @@ https://templatemo.com/tm-571-hexashop
                         <span>Enter the form details below and submit.</span>
                     </div>
                     <form id="subscribe" action="" method="get">
+                        <script src=
+                        "https://smtpjs.com/v3/smtp.js">
+                      </script>
                         <div class="row">
                           <div class="col-lg-5">
                             <fieldset>
@@ -163,7 +169,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                           <div class="col-lg-2">
                             <fieldset>
-                              <button type="submit" id="second-form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                              <button type="submit"  id="second-form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
                             </fieldset>
                           </div>
                         </div>
@@ -276,7 +282,9 @@ https://templatemo.com/tm-571-hexashop
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
-
+    <script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
     <script>
 
         $(function() {
@@ -292,8 +300,25 @@ https://templatemo.com/tm-571-hexashop
                 
             });
         });
-
+    
+    
+        function sendEmail() {
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username:"gimpetzer1@gmail.com",
+      Password:"137984625Idea@@Marcel",/*don't use my google account please*/
+      To: "witsokkies@gmail.com",
+      From: "gimpetzer1@gmail.com",
+      Subject: "Customer feedback",
+      Body: "thank you for the feedback",
+    })
+        .then(function (message) {
+        alert("Feedback received")
+      });
+  }
+    
     </script>
+    
 
   </body>
 
